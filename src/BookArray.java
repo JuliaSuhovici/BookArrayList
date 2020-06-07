@@ -7,10 +7,10 @@ public class BookArray {
 		addBook(new Book("Fahrenheit 451"));
 		addBook(new Book("The Thorn Birds"), 1);
 		addBook(new Book("The Art of Computer Programming"), 1);
-		System.out.println(findByTitle("The Thorn Birds"));
 		
+		System.out.println(findByTitle("The Thorn Birds"));
 		swapBook("The Thorn Birds", new Book("Dandelion Wine"));
-	//	readAll(true);
+		
 		System.out.println(libraryBooks.toString());
 	}
 	
@@ -27,21 +27,6 @@ public class BookArray {
 		}
 	}
 	
-	//----------?----------//
-	public static void readAll(boolean excludeEmpty) {
-		for(Book i : libraryBooks) {
-			if(excludeEmpty) {
-				if(i!= null)
-					System.out.println(i);
-				else 
-					continue;
-			}
-			else{
-				System.out.println(i);
-			}
-		}	
-	}
-	
 	public static void updateTitle(String newTitle, int index) {
 		try {
 			libraryBooks.get(index).setTitle(newTitle);
@@ -56,28 +41,6 @@ public class BookArray {
 			System.err.println("ELEMENT WITH INDEX "+ index + " DOESN'T EXIST!");
 		}
 	}
-//	
-//	public static void addBook(Book book, boolean atTheEnd) {
-//		if(atTheEnd) {
-//			try {
-//				for(int i= libraryBooks.size()-1; i>=0; i--) { 
-//					if(libraryBooks.get(i) == null && libraryBooks.get(i-1)!=null ) {
-//						libraryBooks[i] = book;
-//						break;
-//					}
-//				}
-//			}catch(ArrayIndexOutOfBoundsException e) {  //in case array is empty(there is no books)
-//				libraryBooks[0] = book;
-//			}
-//			
-//		}else {
-//			for( int i= 0; i<libraryBooks.length; i++) 
-//				if(libraryBooks[i] == null) {
-//					libraryBooks[i] = book;
-//					break;
-//				}			
-//		}
-//	}
 
 	public static int findByTitle(String title) {
 		
