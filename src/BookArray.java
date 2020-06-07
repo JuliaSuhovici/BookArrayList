@@ -14,11 +14,11 @@ public class BookArray {
 		System.out.println(libraryBooks.toString());
 	}
 	
-	// Adding at the begining
+	// Adding to the beginning
 	public static void addBook(Book book) {
 		libraryBooks.add(0, book);
 	}
-	
+	// Adding to a set position
 	public static void addBook(Book book, int index) {
 		try{
 			libraryBooks.add(index, book);
@@ -26,7 +26,7 @@ public class BookArray {
 			System.err.println("There is no such place for the book!");
 		}
 	}
-	
+	// Changing the title
 	public static void updateTitle(String newTitle, int index) {
 		try {
 			libraryBooks.get(index).setTitle(newTitle);
@@ -34,6 +34,8 @@ public class BookArray {
 			System.err.println("ELEMENT WITH INDEX "+ index + " DOESN'T EXIST!");
 		}	
 	}
+	
+	// Deleting the book
 	public static void deleteBook(int index) {
 		try{
 			libraryBooks.remove(index);
@@ -42,6 +44,7 @@ public class BookArray {
 		}
 	}
 
+	//Finding by title
 	public static int findByTitle(String title) {
 		
 		for( Book i : libraryBooks) {
@@ -52,6 +55,7 @@ public class BookArray {
 		return -1;
 	}
 	
+	// Swap two books
 	public static void swapBook(String title, Book newBook) {
 		int i = findByTitle(title);
 		if(i != -1)
